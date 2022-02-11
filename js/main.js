@@ -7,7 +7,7 @@ $(document).ready(() => {
 });
 
 function getMovies(searchText){
-  axios.get('https://www.omdbapi.com/?s=spring&apikey=841a117d&'+searchText)
+  axios.get('https://www.omdbapi.com/?s='+searchText+'&apikey=7fde8c7')
     .then((response) => {
       console.log(response);
       let movies = response.data.Search;
@@ -40,7 +40,7 @@ function movieSelected(id){
 function getMovie(){
   let movieId = sessionStorage.getItem('movieId');
 
-  axios.get('https://www.omdbapi.com/?s=spring&apikey=841a117d&'+movieId)
+  axios.get('https://www.omdbapi.com/?i'+movieId+'apikey=7fde8c7')
     .then((response) => {
       console.log(response);
       let movie = response.data;
